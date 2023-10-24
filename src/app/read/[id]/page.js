@@ -1,6 +1,6 @@
 export default async function Read(props){
     //console.log("프롭스는? ",props);
-    const resp = await fetch(`http://localhost:9999/topics/${props.params.id}`,{cache:"no-store"});
+    const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+`topics/${props.params.id}`,{cache:"no-store"});
     const topic = await resp.json();
     return(
         <>
